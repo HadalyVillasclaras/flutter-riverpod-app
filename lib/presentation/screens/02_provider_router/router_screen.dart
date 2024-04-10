@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_app/config/router/app_router.dart';
 
-
-class RouterScreen extends StatelessWidget {
+class RouterScreen extends ConsumerWidget {
   const RouterScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+
+    
     return Scaffold(
       appBar: AppBar(
         title: const Text('Provider + Go Router'),
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon( Icons.arrow_back_ios_new_rounded ),
-        onPressed: () {},
+        onPressed: () {
+          ref.read(appRouterProvider).pop(); // utilizamos el método pop de go_router a través del provider de app router que hemos creado
+        },
       ),
     );
   }
