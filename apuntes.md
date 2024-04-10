@@ -23,3 +23,4 @@ ejemplo, el provider de theme en el main
 Para mantener un estado de un provider se usa
 # keepAlive
 
+family permite enviar arg. si el arg es el mismo y ya tenia resolcuion de un future utilizan el mismo valor.
